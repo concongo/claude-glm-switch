@@ -29,7 +29,13 @@ if ! command -v claude >/dev/null 2>&1; then
 fi
 
 show_env() {
-  echo "ZAI_API_KEY: ${ZAI_API_KEY:+set}${ZAI_API_KEY:-unset}"
+  if [[ -n "${ZAI_API_KEY:-}" ]]; then
+    local key_tail
+    key_tail="${ZAI_API_KEY: -4}"
+    echo "ZAI_API_KEY: ****${key_tail}"
+  else
+    echo "ZAI_API_KEY: unset"
+  fi
   echo "GLM_OPUS_MODEL: ${GLM_OPUS_MODEL:-<default>}"
   echo "GLM_SONNET_MODEL: ${GLM_SONNET_MODEL:-<default>}"
   echo "GLM_HAIKU_MODEL: ${GLM_HAIKU_MODEL:-<default>}"
