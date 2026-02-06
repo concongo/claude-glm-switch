@@ -50,13 +50,13 @@ detect_shell() {
 choose_shell() {
   local detected="$1"
   if [[ -t 0 ]]; then
-    echo "Detected shell: ${detected}"
-    echo "Which shell config should be updated?"
-    echo "1) ${detected} (recommended)"
-    echo "2) bash"
-    echo "3) zsh"
-    echo "4) both"
-    read -r -p "Selection [1-4]: " choice
+    printf "%s\n" "Detected shell: ${detected}" >&2
+    printf "%s\n" "Which shell config should be updated?" >&2
+    printf "%s\n" "1) ${detected} (recommended)" >&2
+    printf "%s\n" "2) bash" >&2
+    printf "%s\n" "3) zsh" >&2
+    printf "%s\n" "4) both" >&2
+    read -r -p "Selection [1-4]: " choice < /dev/tty
     case "${choice}" in
       2) echo "bash" ;;
       3) echo "zsh" ;;
