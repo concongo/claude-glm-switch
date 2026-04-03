@@ -22,19 +22,13 @@ This is an English rewrite and clean-room implementation inspired by `claude-cod
 
 ## 🚀 Quick start
 
-1. Set your Z.AI key in your shell profile:
-
-```bash
-export ZAI_API_KEY="YOUR_KEY_HERE"
-```
-
-2. Install the scripts and aliases:
+1. Run the installer and optionally let it add your Z.AI key to your shell config:
 
 ```bash
 ./install.sh
 ```
 
-3. Use the commands:
+2. Use the commands:
 
 ```bash
 claude            # native Claude
@@ -71,6 +65,7 @@ You can override the defaults by setting any of these:
 ## 🧰 Troubleshooting
 
 - If `claude-glm` says the key is missing, make sure `ZAI_API_KEY` is exported in the shell you are using.
+- If you skipped the key prompt during install, add `export ZAI_API_KEY="YOUR_KEY_HERE"` to your shell profile and reload the shell.
 - If `claude` is not found, install Claude Code and make sure it is on PATH.
 
 ## 🧹 Uninstall
