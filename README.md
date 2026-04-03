@@ -11,7 +11,7 @@ This is an English rewrite and clean-room implementation inspired by `claude-cod
 ## ✨ What it does
 
 - Adds launchers that set Anthropic-compatible env vars for Z.AI
-- Provides a simple menu to pick native Claude vs GLM
+- Provides a simple menu to pick native Claude vs GLM variants
 - Keeps your API key out of the scripts (reads from env)
 
 ## ✅ Prerequisites
@@ -40,6 +40,8 @@ export ZAI_API_KEY="YOUR_KEY_HERE"
 claude            # native Claude
 claude-glm        # GLM with GLM-4.7 defaults
 claude-glm-air    # GLM with GLM-4.5-Air defaults
+claude-glm-5      # GLM with GLM-5 defaults
+claude-glm-5-turbo # GLM with GLM-5-Turbo defaults
 claude-switch     # menu
 ```
 
@@ -55,6 +57,10 @@ The scripts set Anthropic-compatible environment variables so Claude Code talks 
     - Haiku -> `glm-4.5-air`
   - `claude-glm-air`:
     - Opus/Sonnet/Haiku -> `glm-4.5-air`
+  - `claude-glm-5`:
+    - Opus/Sonnet/Haiku -> `glm-5`
+  - `claude-glm-5-turbo`:
+    - Opus/Sonnet/Haiku -> `glm-5-turbo`
 
 You can override the defaults by setting any of these:
 
