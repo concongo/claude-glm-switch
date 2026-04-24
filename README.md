@@ -35,6 +35,7 @@ claude            # native Claude
 claude-glm        # GLM with GLM-4.7 defaults
 claude-glm-air    # GLM with GLM-4.5-Air defaults
 claude-glm-5      # GLM with GLM-5 defaults
+claude-glm-51     # GLM with GLM-5.1 defaults
 claude-glm-5-turbo # GLM with GLM-5-Turbo defaults
 claude-switch     # menu
 ```
@@ -53,6 +54,8 @@ The scripts set Anthropic-compatible environment variables so Claude Code talks 
     - Opus/Sonnet/Haiku -> `glm-4.5-air`
   - `claude-glm-5`:
     - Opus/Sonnet/Haiku -> `glm-5`
+  - `claude-glm-51`:
+    - Opus/Sonnet/Haiku -> `glm-5.1`
   - `claude-glm-5-turbo`:
     - Opus/Sonnet/Haiku -> `glm-5-turbo`
 

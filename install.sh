@@ -9,12 +9,14 @@ mkdir -p "${DEST_DIR}"
 cp -f "${ROOT_DIR}/launch-with-glm.sh" "${DEST_DIR}/"
 cp -f "${ROOT_DIR}/launch-with-glm-air.sh" "${DEST_DIR}/"
 cp -f "${ROOT_DIR}/launch-with-glm-5.sh" "${DEST_DIR}/"
+cp -f "${ROOT_DIR}/launch-with-glm-51.sh" "${DEST_DIR}/"
 cp -f "${ROOT_DIR}/launch-with-glm-5-turbo.sh" "${DEST_DIR}/"
 cp -f "${ROOT_DIR}/claude-code-glm-switcher.sh" "${DEST_DIR}/"
 
 chmod +x "${DEST_DIR}/launch-with-glm.sh" \
   "${DEST_DIR}/launch-with-glm-air.sh" \
   "${DEST_DIR}/launch-with-glm-5.sh" \
+  "${DEST_DIR}/launch-with-glm-51.sh" \
   "${DEST_DIR}/launch-with-glm-5-turbo.sh" \
   "${DEST_DIR}/claude-code-glm-switcher.sh"
 
@@ -57,6 +59,7 @@ ${BLOCK_START}
 alias claude-glm="${DEST_DIR}/launch-with-glm.sh"
 alias claude-glm-air="${DEST_DIR}/launch-with-glm-air.sh"
 alias claude-glm-5="${DEST_DIR}/launch-with-glm-5.sh"
+alias claude-glm-51="${DEST_DIR}/launch-with-glm-51.sh"
 alias claude-glm-5-turbo="${DEST_DIR}/launch-with-glm-5-turbo.sh"
 alias claude-switch="${DEST_DIR}/claude-code-glm-switcher.sh"
 ${BLOCK_END}

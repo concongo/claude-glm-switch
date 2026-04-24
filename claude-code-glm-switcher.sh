@@ -48,11 +48,12 @@ while true; do
   echo "2) GLM (glm-4.7 defaults)"
   echo "3) GLM Air (glm-4.5-air defaults)"
   echo "4) GLM 5 (glm-5 defaults)"
-  echo "5) GLM 5 Turbo (glm-5-turbo defaults)"
-  echo "6) Show current env"
-  echo "7) Quit"
+  echo "5) GLM 5.1 (glm-5.1 defaults)"
+  echo "6) GLM 5 Turbo (glm-5-turbo defaults)"
+  echo "7) Show current env"
+  echo "8) Quit"
 
-  read -r -p "Selection [1-7]: " choice
+  read -r -p "Selection [1-8]: " choice
 
   case "${choice}" in
     1)
@@ -68,12 +69,15 @@ while true; do
       exec "${SCRIPT_DIR}/launch-with-glm-5.sh" "$@"
       ;;
     5)
-      exec "${SCRIPT_DIR}/launch-with-glm-5-turbo.sh" "$@"
+      exec "${SCRIPT_DIR}/launch-with-glm-51.sh" "$@"
       ;;
     6)
-      show_env
+      exec "${SCRIPT_DIR}/launch-with-glm-5-turbo.sh" "$@"
       ;;
     7)
+      show_env
+      ;;
+    8)
       exit 0
       ;;
     *)
