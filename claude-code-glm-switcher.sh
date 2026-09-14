@@ -39,21 +39,29 @@ show_env() {
   echo "GLM_OPUS_MODEL: ${GLM_OPUS_MODEL:-<default>}"
   echo "GLM_SONNET_MODEL: ${GLM_SONNET_MODEL:-<default>}"
   echo "GLM_HAIKU_MODEL: ${GLM_HAIKU_MODEL:-<default>}"
+  echo "LITELLM_BASE_URL: ${LITELLM_BASE_URL:-unset}"
+  if [[ -n "${LITELLM_API_KEY:-}" ]]; then
+    echo "LITELLM_API_KEY: set"
+  else
+    echo "LITELLM_API_KEY: unset"
+  fi
+  echo "LITELLM_MODEL: ${LITELLM_MODEL:-unset}"
+  echo "LITELLM_OPUS_MODEL: ${LITELLM_OPUS_MODEL:-<default>}"
+  echo "LITELLM_SONNET_MODEL: ${LITELLM_SONNET_MODEL:-<default>}"
+  echo "LITELLM_HAIKU_MODEL: ${LITELLM_HAIKU_MODEL:-<default>}"
 }
 
 while true; do
   echo ""
   echo "Choose a mode:"
   echo "1) Native Claude"
-  echo "2) GLM (glm-4.7 defaults)"
-  echo "3) GLM Air (glm-4.5-air defaults)"
-  echo "4) GLM 5 (glm-5 defaults)"
-  echo "5) GLM 5.1 (glm-5.1 defaults)"
-  echo "6) GLM 5 Turbo (glm-5-turbo defaults)"
-  echo "7) Show current env"
-  echo "8) Quit"
+  echo "2) GLM 5.3"
+  echo "3) GLM 5.3 Flash"
+  echo "4) LiteLLM proxy"
+  echo "5) Show current env"
+  echo "6) Quit"
 
-  read -r -p "Selection [1-8]: " choice
+  read -r -p "Selection [1-6]: " choice
 
   case "${choice}" in
     1)
@@ -63,21 +71,15 @@ while true; do
       exec "${SCRIPT_DIR}/launch-with-glm.sh" "$@"
       ;;
     3)
-      exec "${SCRIPT_DIR}/launch-with-glm-air.sh" "$@"
+      exec "${SCRIPT_DIR}/launch-with-glm-53-flash.sh" "$@"
       ;;
     4)
-      exec "${SCRIPT_DIR}/launch-with-glm-5.sh" "$@"
+      exec "${SCRIPT_DIR}/launch-with-litellm.sh" "$@"
       ;;
     5)
-      exec "${SCRIPT_DIR}/launch-with-glm-51.sh" "$@"
-      ;;
-    6)
-      exec "${SCRIPT_DIR}/launch-with-glm-5-turbo.sh" "$@"
-      ;;
-    7)
       show_env
       ;;
-    8)
+    6)
       exit 0
       ;;
     *)

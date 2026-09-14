@@ -7,17 +7,19 @@ DEST_DIR="${HOME}/.claude/glm-switcher"
 mkdir -p "${DEST_DIR}"
 
 cp -f "${ROOT_DIR}/launch-with-glm.sh" "${DEST_DIR}/"
-cp -f "${ROOT_DIR}/launch-with-glm-air.sh" "${DEST_DIR}/"
-cp -f "${ROOT_DIR}/launch-with-glm-5.sh" "${DEST_DIR}/"
-cp -f "${ROOT_DIR}/launch-with-glm-51.sh" "${DEST_DIR}/"
-cp -f "${ROOT_DIR}/launch-with-glm-5-turbo.sh" "${DEST_DIR}/"
+cp -f "${ROOT_DIR}/launch-with-glm-53-flash.sh" "${DEST_DIR}/"
+cp -f "${ROOT_DIR}/launch-with-litellm.sh" "${DEST_DIR}/"
 cp -f "${ROOT_DIR}/claude-code-glm-switcher.sh" "${DEST_DIR}/"
-
-chmod +x "${DEST_DIR}/launch-with-glm.sh" \
-  "${DEST_DIR}/launch-with-glm-air.sh" \
+rm -f "${DEST_DIR}/launch-with-glm-air.sh" \
   "${DEST_DIR}/launch-with-glm-5.sh" \
   "${DEST_DIR}/launch-with-glm-51.sh" \
+  "${DEST_DIR}/launch-with-glm-53.sh" \
   "${DEST_DIR}/launch-with-glm-5-turbo.sh" \
+  "${DEST_DIR}/launch-with-litellm-53-flash.sh"
+
+chmod +x "${DEST_DIR}/launch-with-glm.sh" \
+  "${DEST_DIR}/launch-with-glm-53-flash.sh" \
+  "${DEST_DIR}/launch-with-litellm.sh" \
   "${DEST_DIR}/claude-code-glm-switcher.sh"
 
 BLOCK_START="# >>> glm-switcher >>>"
@@ -57,10 +59,9 @@ build_block_content() {
 ${BLOCK_START}
 # GLM switcher aliases
 alias claude-glm="${DEST_DIR}/launch-with-glm.sh"
-alias claude-glm-air="${DEST_DIR}/launch-with-glm-air.sh"
-alias claude-glm-5="${DEST_DIR}/launch-with-glm-5.sh"
-alias claude-glm-51="${DEST_DIR}/launch-with-glm-51.sh"
-alias claude-glm-5-turbo="${DEST_DIR}/launch-with-glm-5-turbo.sh"
+alias claude-glm-53="${DEST_DIR}/launch-with-glm.sh"
+alias claude-glm-53-flash="${DEST_DIR}/launch-with-glm-53-flash.sh"
+alias claude-litellm="${DEST_DIR}/launch-with-litellm.sh"
 alias claude-switch="${DEST_DIR}/claude-code-glm-switcher.sh"
 ${BLOCK_END}
 EOF

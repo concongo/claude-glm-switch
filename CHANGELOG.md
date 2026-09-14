@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+- Direct GLM-5.3 and GLM-5.3-Flash aliases and menu options
+- One LiteLLM proxy launcher with a configurable model name and optional per-tier overrides
+
+### Changed
+- Default `claude-glm` mapping now uses GLM-5.3 for all model tiers
+- Removed pre-5.3 GLM launchers and menu options; `claude-glm-53` now aliases `claude-glm`
+
 ## [0.1.0] - 2026-04-24
 
 ### Added
